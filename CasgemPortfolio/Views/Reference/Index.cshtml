@@ -1,0 +1,43 @@
+﻿
+@using CasgemPortfolio.Models.Entities
+@model List<TblReference>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+@Html.Action("PartialStyle")
+
+<div class="container py-5">
+    <div class="row text-center text-white">
+        <div class="col-lg-8 mx-auto">
+            <h1 class="display-4" style="color:orange">Referanslarım</h1>
+            <br />
+        </div>
+    </div>
+
+
+    <div class="row row-eq-height text-center">
+        @foreach (var item in Model)
+        {
+            <div class="col-xl-3 col-sm-6 mb-5">
+                <div class="bg-white rounded shadow-sm py-5 px-4">
+                    <img src="@item.ReferenceImage" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                    <h5 class="mb-0">@item.ReferenceName @item.ReferenceSurname</h5>
+                    <span class="small text-uppercase text-muted">@item.ReferenceInfo</span>
+                    <ul class="social mb-0 list-inline mt-3">
+                        <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+
+                    </ul>
+                    <a href="/Reference/DeleteReference/@item.ReferenceID" class="btn btn-outline-danger">Referans Sil</a>
+                    <a href="/Reference/UpdateReference/@item.ReferenceID" class="btn btn-outline-warning">Referans Güncelle</a>
+                </div>
+            </div>
+        }
+    </div>
+    <a href="/Reference/AddReference/" class="btn btn-outline-primary">Referans Ekle</a>
+</div>

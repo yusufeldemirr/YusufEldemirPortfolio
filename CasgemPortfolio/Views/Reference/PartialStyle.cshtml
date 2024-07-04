@@ -1,0 +1,47 @@
+﻿
+<style>
+    /* Custom CSS for equal-height columns */
+    .row-eq-height {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+        .row-eq-height > [class*='col-'] {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px; /* Adjust this value to set the desired margin between the cells */
+        }
+
+        .row-eq-height .bg-white {
+            flex: 1;
+        }
+    /* Custom CSS for buttons */
+    .btn {
+        font-size: 14px; /* Adjust the font size as needed */
+        padding: 8px 16px; /* Adjust padding as needed */
+        border-radius: 4px; /* Rounded corners */
+        text-decoration: none; /* Remove underlines from links */
+        margin-top: 10px; /* Adjust the spacing between buttons and content */
+    }
+
+        /* Button colors */
+        .btn.btn-outline-danger {
+            color: #FF0000;
+            border-color: #FF0000;
+        }
+
+            .btn.btn-outline-danger:hover {
+                background-color: #FF0000;
+                color: #FFF;
+            }
+
+        .btn.btn-outline-warning {
+            color: #FFC947;
+            border-color: #FFC947;
+        }
+
+            .btn.btn-outline-warning:hover {
+                background-color: #FFC947;
+                color: #FFF;
+            }
+</style>
